@@ -1,4 +1,4 @@
-pragma solidity ^0.4.2;
+pragma solidity ^0.4.17;
 
 import "./ContractNameService.sol";
 
@@ -8,47 +8,47 @@ contract CnsController {
     bytes32 public contractName;
 
     modifier onlyByProvider() {
-        if (msg.sender != provider) throw;
+        require(msg.sender == provider);
         _;
     }
 
     modifier onlyByVersionContract() {
-        if (!isVersionContract()) throw;
+        require(isVersionContract());
         _;
     }
 
     modifier onlyByVersionLogic() {
-        if (!isVersionLogic()) throw;
+        require(isVersionLogic());
         _;
     }
 
     modifier onlyByVersionContractOrLogic() {
-        if (!isVersionContractOrLogic()) throw;
+        require(isVersionContractOrLogic());
         _;
     }
 
-    function CnsController(ContractNameService _cns, bytes32 _contractName) {
+    function CnsController(ContractNameService _cns, bytes32 _contractName) public {
         cns = _cns;
         contractName = _contractName;
     }
 
-    function getCns() constant returns (ContractNameService) {
+    function getCns() public constant returns (ContractNameService) {
         return cns;
     }
 
-    function getContractName() constant returns (bytes32) {
+    function getContractName() public constant returns (bytes32) {
         return contractName;
     }
 
-    function isVersionContract() constant returns (bool) {
+    function isVersionContract() public constant returns (bool) {
         return cns.isVersionContract(msg.sender, contractName);
     }
 
-    function isVersionLogic() constant returns (bool) {
+    function isVersionLogic() public constant returns (bool) {
         return cns.isVersionLogic(msg.sender, contractName);
     }
 
-    function isVersionContractOrLogic() constant returns (bool) {
+    function isVersionContractOrLogic() public constant returns (bool) {
         return cns.isVersionContract(msg.sender, contractName) || cns.isVersionLogic(msg.sender, contractName);
     }
 }

@@ -1,0 +1,23 @@
+{
+  "name": "zcom-contracts",
+  "version": "1.0.0",
+  "description": "contracts in Z.com Cloud Blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zcom-cloud-blockchain/solidity.git"
+  },
+  "author": "GMO Internet, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zcom-cloud-blockchain/solidity/issues"
+  },
+  "homepage": "https://github.com/zcom-cloud-blockchain/solidity#readme",
+  "devDependencies": {
+    "bluebird": "^3.5.1"
+  },
+  "dependencies": {}
+}
