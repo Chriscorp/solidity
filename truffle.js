@@ -46,6 +46,17 @@ module.exports = {
             network_id: 9449,
             gas: 50000000,
             gasPrice: 10000000000,
+        },
+        test: {
+            host: 'localhost',
+            port: 8545,
+            network_id: 20581,
+            gas: 7000000,
+            gasPrice: 10000000000,
+            fixer: {
+                data_object: '0x00817043ca80ac8ea22797fdcb414c18a7860f7e',
+                file_object: '0x00817043ca80ac8ea22797fdcb414c18a7860f7e'
+            }
         }
     }
 };
