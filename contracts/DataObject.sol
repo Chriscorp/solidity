@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity >=0.4.0 <0.7.0;
 
 import "./DataObjectLogic_v1.sol";
 import "./VersionContract.sol";
