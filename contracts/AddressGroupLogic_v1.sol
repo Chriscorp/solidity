@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity >=0.4.0 <0.7.0;
 
 import "./VersionLogic.sol";
 import "./AddressGroupField_v1.sol";
