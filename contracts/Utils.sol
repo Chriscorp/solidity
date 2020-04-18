@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity >=0.4.0 <0.7.0;
 
 contract Utils {
     function transferUniqueId(bytes32 _id) internal constant returns (bytes32) {
